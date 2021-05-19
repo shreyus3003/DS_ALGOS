@@ -53,19 +53,34 @@ class BinaryST:
             self.print_t1(tree.root)
 
 
+    def bfs(self):
+        curr_node = self.root
+        list = []
+        queue = []
+        queue.append(curr_node)
+        while len(queue) > 0:
+            curr_node = queue.pop()
+            list.append(curr_node.data)
+            if curr_node.left:
+                queue.append(curr_node.left)
+            if curr_node.right:
+                queue.append(curr_node.right)
+        return list
 
 
 
 
 bst = BinaryST()
 bst.insert(9)
-bst.insert(5)
-bst.insert(11)
-bst.insert(2)
-bst.insert(7)
-bst.insert(14)
+bst.insert(4)
+bst.insert(6)
+bst.insert(20)
+bst.insert(170)
+bst.insert(15)
+bst.insert(1)
 
 # bst.print_tree()
 
 bst.print_tree1(bst)
 print(bst.lookup(14))
+print(bst.bfs())

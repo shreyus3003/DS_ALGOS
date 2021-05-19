@@ -7,16 +7,40 @@ def fibonacci(x):
         # print(arr)
     return arr[x]
 
-def fibonaccir(x):
+# Fibonacci with recursion
+def fibonaccir(x,cal):
     arr = []
+    cal[0] = cal[0] +1
     if x < 2:
         return x
 
     res=0
-    return fibonaccir(x-1) + fibonaccir(x-2)
+    return fibonaccir(x-1,cal) + fibonaccir(x-2,cal)
 
 # print(res)
-n=8
-for i in range(n+1):
-    print(fibonaccir(i))
+
+
+# Fibnocci with recursion and caching
+cache = {}
+cal = [0]
+def fibnoccifast(n, cal):
+    print(cache)
+    if n < 2:
+        return n
+    if n in cache:
+        return cache[n]
+    else:
+        cal[0] = cal[0] + 1
+        cache[n] = fibnoccifast(n-1, cal) + fibnoccifast(n-2, cal)
+        return cache[n]
+
+
+
+n=10
+# for i in range(n+1):
+#     print(fibonaccir(i))
 # print(fibonacci(8))
+print(cache)
+print(fibnoccifast(n, cal))
+# print(fibonaccir(n,cal))
+print(cal)
