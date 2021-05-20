@@ -6,6 +6,20 @@ def maxprofit(prices):
             if prof > maxp:
                 maxp = prof
     return maxp
+def maxprofit2(prices):
+    check={}
+    min = prices[0]
+    for i in range(len(prices)-1):
+        if prices[i+1] < min :
+            min = prices[i+1]
+    print(min)
+    maxp = 0
+    for j in range(len(prices)):
+        prof = prices[j] -min
+        if prof > maxp:
+            maxp = prof
+    return maxp
 
-prices = [[7,1,5,3,6,4]]
+
+prices = [2,4,1]
 print(maxprofit(prices))

@@ -11,4 +11,13 @@ def sortArrayByParityII(nums):
             t = t + 2
 
 nums = [4,2,5,7]
-sortArrayByParityII(nums)
+nums.insert(1,10)
+print("nums", nums)
+print("pop", nums.pop())
+print("2nd nums",nums)
+print("pop with index1", nums.pop(1))
+print("3rd nums",nums)
+print("remove element 7",nums.remove(2))
+print("final nums", nums)
+
+# sortArrayByParityII(nums)
